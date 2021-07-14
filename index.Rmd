@@ -1,0 +1,47 @@
+---
+title: "GF0604 Procesamiento de datos geográficos 2021-I. Proyecto 02"
+author: 
+- name: Manuel Vargas
+  url: https://github.com/mfvargas
+  affiliation: Universidad de Costa Rica
+  affiliation_url: https://www.ucr.ac.cr/
+- name: Christian Birkel
+  affiliation: Universidad de Costa Rica
+  affiliation_url: https://www.ucr.ac.cr/
+description: |
+  Curso GF0604 Procesamiento de datos geográficos. Escuela de Geografía, Universidad de Costa Rica. Primer ciclo lectivo 2021. Proyecto 02.
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+### Fecha de entrega y entregables
+La fecha y hora límite para la entrega de esta tarea es el **jueves 29 de julio de 2021 a las 12:00 p.m.**
+
+Debe escribir un documento R Markdown y publicarlo como una **página web (HTML) en GitHub Pages** con los contenidos que se especifican seguidamente. Entregue su tarea a través de la plataforma Mediación Virtual, especificando la dirección de su página web.
+
+### Objetivos
+Al finalizar esta tarea, el estudiante será capaz de:
+
+1. Realizar operaciones en R con datos de atributos, espaciales y de geometrías.
+2. Visualizar los resultados con tablas, gráficos y mapas interactivos.
+3. Publicar los resultados como páginas web generadas a partir de documentos R Markdown, mediante el paquete flexdashboards.
+
+### Datos
+Para desarrollar esta tarea, utilice los siguientes conjuntos de datos:
+
+- Registros de presencia de orquídeas (familia [*Orchidaceae*](https://es.wikipedia.org/wiki/Orchidaceae)) de Costa Rica, disponible en [https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/gbif/orchidaceae-cr-registros.csv](https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/gbif/orchidaceae-cr-registros.csv).  
+- Áreas silvestres protegidas (ASP) de Costa Rica, disponible en [https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/sinac/asp/asp-wgs84.geojson](https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/sinac/asp/asp-wgs84.geojson).
+
+### Desarrollo
+
+Organice las capas de manera que puedan visualizarse de la mejor manera posible. Elija con cuidado los colores de las capas.
