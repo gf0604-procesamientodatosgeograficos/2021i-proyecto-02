@@ -2470,24 +2470,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </nav>
 </div>
 <h3 id="fecha-de-entrega-y-entregables">Fecha de entrega y entregables</h3>
-<p>La fecha y hora límite para la entrega de esta tarea es el <strong>jueves 29 de julio de 2021 a las 12:00 p.m.</strong></p>
-<p>Debe escribir un documento R Markdown y publicarlo como una <strong>página web (HTML) en GitHub Pages</strong> con los contenidos que se especifican seguidamente. Entregue su tarea a través de la plataforma Mediación Virtual, especificando la dirección de su página web.</p>
+<p>La fecha y hora límite para la entrega de este proyecto es el <strong>jueves 29 de julio de 2021 a las 12:00 p.m.</strong></p>
+<p>Debe escribir un documento R Markdown y publicarlo como una <strong>página web (HTML) en GitHub Pages</strong> con los contenidos que se especifican seguidamente y que se presentarán en un tablero de control (<em>dashboard</em>) que construirá mediante el paquete <a href="https://pkgs.rstudio.com/flexdashboard/">flexdashboard</a>. Entregue su tarea a través de la plataforma Mediación Virtual, especificando la dirección de su sitio web.</p>
+<p><strong>El proyecto puede realizarse en grupos de hasta tres estudiantes.</strong></p>
 <h3 id="objetivos">Objetivos</h3>
 <p>Al finalizar esta tarea, el estudiante será capaz de:</p>
 <ol type="1">
-<li>Realizar operaciones en R con datos de atributos, espaciales y de geometrías.</li>
+<li>Realizar operaciones en el lenguaje R con datos de atributos, datos espaciales y geometrías, tanto en el modelo vectorial como en el raster.</li>
 <li>Visualizar los resultados con tablas, gráficos y mapas interactivos.</li>
-<li>Publicar los resultados como páginas web generadas a partir de documentos R Markdown, mediante el paquete flexdashboards.</li>
+<li>Publicar los resultados como páginas web generadas a partir de documentos R Markdown, mediante el paquete <code>flexdashboard</code>.</li>
 </ol>
 <h3 id="datos">Datos</h3>
-<p>Para desarrollar esta tarea, utilice los siguientes conjuntos de datos:</p>
+<p>Para desarrollar el proyecto, utilice los siguientes conjuntos de datos:</p>
 <ul>
 <li>Registros de presencia de orquídeas (familia <a href="https://es.wikipedia.org/wiki/Orchidaceae"><em>Orchidaceae</em></a>) de Costa Rica, disponible en <a href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/gbif/orchidaceae-cr-registros.csv">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/gbif/orchidaceae-cr-registros.csv</a>.<br />
 </li>
-<li>Áreas silvestres protegidas (ASP) de Costa Rica, disponible en <a href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/sinac/asp/asp-wgs84.geojson">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/sinac/asp/asp-wgs84.geojson</a>.</li>
+<li>Cantones de Costa Rica, disponible en <a href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cr_cantones_simp_wgs84.geojson">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cr_cantones_simp_wgs84.geojson</a>.<br />
+</li>
+<li>Provincias de Costa Rica, disponible en <a href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cr_provincias_simp_wgs84.geojson">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cr_provincias_simp_wgs84.geojson</a>.</li>
 </ul>
 <h3 id="desarrollo">Desarrollo</h3>
-<p>Organice las capas de manera que puedan visualizarse de la mejor manera posible. Elija con cuidado los colores de las capas.</p>
+<ol start="0" type="1">
+<li>(5%) Descarte los registros con un valor mayor que 1000 (mil) en el campo <code>coordinateUncertaintyInMeters</code>. <strong>No elimine los registros con un valor vacío o NA en este campo (vamos a asumir que son aceptables).</strong></li>
+</ol>
+<p>Elabore un tablero de control con el paquete <code>flexdashboard</code> con los siguientes elementos:</p>
+<ol type="1">
+<li>(15%) Etiquetas que muestren:<br />
+</li>
+</ol>
+<ul>
+<li>La cantidad total de especies.<br />
+</li>
+<li>La cantidad total de géneros.<br />
+</li>
+<li>La cantidad total de registros de presencia.</li>
+</ul>
+<ol start="2" type="1">
+<li><p>(20%) Tabla <code>DT</code> que muestre para cada registro: la especie, la fecha, la provincia y el cantón en el que se ubica.</p></li>
+<li><p>(20%) Gráfico <code>plotly</code> de pastel con la cantidad de registros y porcentaje correspondiente para las 10 especies con más registros. Los registros de las especies restantes deben agruparse en una categoría llamada “Otras”.</p></li>
+<li><p>(20%) Capa <code>leaflet</code> agrupada (<em>clustered</em>) de todos los registros de presencia de orquídeas. La ventana emergente (<em>popup</em>) asociada a cada registro debe mostrar, al menos, el nombre de la especie, la fecha, la provincia y el cantón en donde se ubica el registro.</p></li>
+<li><p>(20%) Capa <code>leaflet</code> raster que muestre la cantidad de especies en cada celda (elija una resolución adecuada).</p></li>
+</ol>
+<p>Consideraciones generales:</p>
+<ul>
+<li>Organice los diferentes elementos del tablero de control de manera que puedan visualizarse de la mejor manera posible. Elija con cuidado los colores de las capas, leyendas y demás elementos visuales. También la cantidad de filas, columnas y páginas del tablero.<br />
+</li>
+<li>Elija la cantidad de mapas en los que va a presentar las diferentes capas.<br />
+</li>
+<li>Cada mapa deben contar con:
+<ul>
+<li>Al menos una capa base (OSM, ESRI Images, Stamen, etc.).<br />
+</li>
+<li>Un control para activar y desactivar las capas.<br />
+</li>
+<li>Leyendas que muestren el significado de los colores en cada capa.</li>
+</ul></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

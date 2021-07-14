@@ -3,7 +3,7 @@
     "path": "C:/Users/mfvargas/gf0604-procesamientodatosgeograficos/2021i/2021i-proyecto-02/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "2947574276",
+    "hash": "4277387362",
     "contents": "",
     "dirty": false,
     "created": 1626243415885.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "27,106",
-        "scrollLine": "25"
+        "cursorPosition": "62,228",
+        "scrollLine": "57"
     },
     "folds": "",
-    "lastKnownWriteTime": 1626244384,
+    "lastKnownWriteTime": 1626297791,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1626244384763,
+    "last_content_update": 1626297791940,
     "read_only": false,
     "read_only_alternatives": []
 }
